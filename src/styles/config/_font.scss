@@ -1,4 +1,4 @@
-@import "../mixins/index";
+@use "../mixins/index" as mix;
 /* FONT
  * -------------------------------------------------- */
 
@@ -18,10 +18,10 @@ $fontName: "Commissioner";
 
 //@include font-face($fontName, 'FILE_NAME', 400);
 
-@include font-face("Commissioner", "Commissioner-Regular", 400);
-@include font-face("Commissioner", "Commissioner-Medium", 500);
-@include font-face("Commissioner", "Commissioner-Light", 300);
-@include font-face("Commissioner", "Commissioner-Bold", 700);
+@include mix.font-face("Commissioner", "Commissioner-Regular", 400);
+@include mix.font-face("Commissioner", "Commissioner-Medium", 500);
+@include mix.font-face("Commissioner", "Commissioner-Light", 300);
+@include mix.font-face("Commissioner", "Commissioner-Bold", 700);
 
 .-fonts-ready {
 	body {

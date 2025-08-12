@@ -1,0 +1,9 @@
+mixin price(header,data)
+	section.section-price
+		div.price__container
+			div.price__header=header
+			div.price__items
+				each item in data
+					div.price__item
+						p.price__title=item.title
+						p.price__price=item.price + '₽'
