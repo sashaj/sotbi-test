@@ -1,0 +1,45 @@
+@import "../mixins/index";
+/* FONT
+ * -------------------------------------------------- */
+
+/*
+ * 100 = thin
+ * 200 = extra-light
+ * 300 = light
+ * 400 = normal, book
+ * 500 = medium
+ * 600 = semi-bold
+ * 700 = bold
+ * 800 = heavy
+ * 900 = black
+ */
+
+$fontName: "Commissioner";
+
+//@include font-face($fontName, 'FILE_NAME', 400);
+
+@include font-face("Commissioner", "Commissioner-Regular", 400);
+@include font-face("Commissioner", "Commissioner-Medium", 500);
+@include font-face("Commissioner", "Commissioner-Light", 300);
+@include font-face("Commissioner", "Commissioner-Bold", 700);
+
+.-fonts-ready {
+	body {
+		font-family: $fontName, var(--base-font-family);
+	}
+
+	h1,
+	h2,
+	h3,
+	h4,
+	h5,
+	h6,
+	.h1,
+	.h2,
+	.h3,
+	.h4,
+	.h5,
+	.h6 {
+		font-family: $fontName, var(--header-text-font-family);
+	}
+}
