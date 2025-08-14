@@ -4,8 +4,11 @@
 @use "../components/info";
 @use "../components/card";
 
-body {
-	overflow: auto;
+body,
+html {
+	overflow-y: auto;
+	overflow-x: hidden;
+	height: 100%;
 }
 .wallpaper:after {
 	width: 100%;

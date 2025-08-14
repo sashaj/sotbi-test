@@ -4,4 +4,8 @@
 	// padding-right: var(--container-gap);
 	// padding-left: var(--container-gap);
 	margin-inline: auto;
+
+	@media (max-width: 1600px) {
+		max-width: 80%;
+	}
 }

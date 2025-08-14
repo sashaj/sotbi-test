@@ -37,11 +37,11 @@ body {
 	text-rendering: optimizespeed;
 }
 
-::selection {
-	background: var(--color-accent);
-	color: var(--color-white);
-	text-shadow: none;
-}
+// ::selection {
+// 	background: var(--color-accent);
+// 	color: var(--color-white);
+// 	text-shadow: none;
+// }
 
 /* CONTENT
  * -------------------------------------------------- */
