@@ -1,0 +1,8 @@
+mixin card(data)
+	each item in data
+		div.card
+			div.card__img-wrapper
+				img(src=item.img).card__img
+			div.card__desc
+				p.card__title=item.title
+				p.card__story=item.story

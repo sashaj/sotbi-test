@@ -1,0 +1,26 @@
+.card {
+	border-radius: 2rem;
+	overflow: hidden;
+	&__img-wrapper {
+		height: 22rem;
+	}
+	&__img {
+		object-fit: cover;
+	}
+	&__desc {
+		padding: 2rem;
+		background-color: var(--color-white);
+		height: 100%;
+	}
+	&__title {
+		font-weight: 700;
+		color: var(--color-blue);
+		font-size: 1.6rem;
+		margin-bottom: 2rem;
+	}
+	&__story {
+		font-weight: 300;
+		font-size: 1.6rem;
+		color: #858585;
+	}
+}

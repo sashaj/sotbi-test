@@ -1,7 +1,12 @@
 @use "_mixins";
 @use "../components/price";
 @use "../components/appointment";
+@use "../components/info";
+@use "../components/card";
 
+body {
+	overflow: auto;
+}
 .wallpaper:after {
 	width: 100%;
 	height: 100%;
@@ -24,7 +29,7 @@
 	position: absolute;
 	z-index: -1;
 	width: 100%;
-	height: 100%;
+	height: 100vh;
 	top: 0;
 	left: 0;
 }
