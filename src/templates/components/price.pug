@@ -1,9 +1,19 @@
-mixin price(header,data)
-	section.section-price
-		div.price__container
-			div.price__header=header
-			div.price__items
-				each item in data
-					div.price__item
-						p.price__title=item.title
-						p.price__amount=item.price + '₽'
+mixin price(header,data, smooth)
+	if smooth
+		section.section-price
+			div.price__container.smooth
+				div.price__header=header
+				div.price__items
+					each item in data
+						div.price__item
+							p.price__title=item.title
+							p.price__amount=item.price + '₽'
+	else
+		section.section-price
+			div.price__container
+				div.price__header=header
+				div.price__items
+					each item in data
+						div.price__item
+							p.price__title=item.title
+							p.price__amount=item.price + '₽'

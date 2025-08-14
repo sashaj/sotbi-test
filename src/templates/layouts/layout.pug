@@ -34,6 +34,7 @@ html(lang="ru" class="notranslate" translate="no")
 			if (sessionStorage.fontsLoaded) {
 				document.documentElement.classList.add('-fonts-ready')
 			}
+			if (CSS && 'paintWorklet' in CSS) CSS.paintWorklet.addModule('https://unpkg.com/smooth-corners')
 
 	body(data-scroll-lock-fix-shift)
 
