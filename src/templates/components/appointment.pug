@@ -1,0 +1,53 @@
+mixin appointment()
+	section.section-appointment
+		form.appointment.form
+			div.appointment__head
+				div.appointment__header Запись на приём
+				div.appointment__contact
+					div.appointment__metro
+						+icon('metro', 25, 20)
+						p.appointment-metro__name Петроградcкая
+					div.appointment__phone
+						+icon('phone', 20, 20)
+						a(href="tel:31231").appointment-phone__link +7 (812) 346-07-31,
+						a(href="tel:31231").appointment-phone__link  346-07-72
+				div.appointment__contact
+					div.appointment__metro
+						+icon('metro', 25, 20)
+						p.appointment-metro__name Василеостровская
+					div.appointment__phone
+						+icon('phone', 20, 20)
+						a(href="tel:31231").appointment-phone__link +7 (812) 346-07-31
+
+			div.appointment__body
+				div.appointment__field.field
+					+icon('user', 20, 20)
+					input.appointment__input(type="text" name="name" placeholder="Имя")
+				div.appointment__field.field
+					+icon('phone', 20, 20)
+					input.appointment__input(type="tel" name="phone" placeholder="Телефон")
+				div.appointment__field
+					+icon('settings', 20, 20)
+					.select
+						select(name="options" id="customSelect" data-placeholder="Как с вами связаться?")
+							option(value="")
+							option(value="1") Телефон
+							option(value="2") Почта
+							option(value="3") Почта 2
+				div.appointment__field
+					+icon('geo', 20, 20)
+					.select
+						select(name="options" id="customSelect" data-placeholder="Выберите клинику")
+							option(value="")
+							option(value="1") Телефон
+							option(value="2") Почта
+							option(value="3") Почта 2
+				div.appointment__field
+					button(type="submit").appointment__submit ЗАПИСАТЬСЯ
+			div.appointment__footer
+				div.appointment__field.field
+					label.checkbox.appointment__policy
+						input(type="checkbox" name="policy")
+						span Даю согласие на обработку персональных данных
+
+

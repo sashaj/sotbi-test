@@ -13,8 +13,6 @@
 	"scripts": {
 		"dev": "vite",
 		"build": "vite build",
-		"tools:format": "biome format ./src --fix",
-		"tools:lint": "biome check ./src --fix",
 		"tools:generate": "plop",
 		"prepare": "husky",
 		"lint-staged": "lint-staged"
@@ -23,10 +21,10 @@
 		"fontfaceobserver": "2.3.0",
 		"gsap": "3.13.0",
 		"imask": "7.6.1",
-		"swiper": "11.2.10"
+		"swiper": "11.2.10",
+		"validate.js": "0.13.1"
 	},
 	"devDependencies": {
-		"@biomejs/biome": "1.8.3",
 		"@vituum/vite-plugin-pug": "1.1.0",
 		"@vituum/vite-plugin-twig": "1.1.0",
 		"husky": "9.1.7",

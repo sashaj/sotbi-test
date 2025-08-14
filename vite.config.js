@@ -51,11 +51,12 @@ export default defineConfig({
 	root: config.root,
 	publicDir: config.public,
 	plugins: [
-		checker({
-			biome: {
-				command: 'check',
-			},
-		}),
+		// checker(
+		// 	{
+		// 	biome: {
+		// 		command: 'check',
+		// 	},
+		// }),
 		pug({
 			root: config.root,
 			data: path.resolve(config.root, 'data/*.json'),

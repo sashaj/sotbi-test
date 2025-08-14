@@ -1,6 +1,6 @@
-@use '_mixins';
+@use "_mixins";
 
-/* select {
+select {
 	appearance: none;
 	width: 100%;
 	border: 1px solid #eeeeee;
@@ -14,7 +14,7 @@
 	option[disabled] {
 		display: none;
 	}
-} */
+}
 
 .select {
 	position: relative;
@@ -27,12 +27,12 @@
 
 	&__label {
 		position: relative;
-		height: 4.44rem;
+		height: 4.4rem;
 		border: 1px solid #ccc;
-		border-radius: 0.4rem;
+		border-radius: 3rem;
 		background-color: #fff;
 		cursor: pointer;
-
+		padding: 1.2rem 2rem 1.2rem 5rem;
 		&::after {
 			@include mixins.content;
 
@@ -50,7 +50,6 @@
 	&__value,
 	&__placeholder {
 		overflow: hidden;
-		padding: 1rem 4rem 1rem 2rem;
 		text-overflow: ellipsis;
 		white-space: nowrap;
 	}
@@ -63,6 +62,7 @@
 		height: 100%;
 		opacity: 0.5;
 		pointer-events: none;
+		padding: 1.2rem 2rem 1.2rem 5rem;
 	}
 
 	&__dropdown {

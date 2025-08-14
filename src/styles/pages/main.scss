@@ -1,5 +1,6 @@
 @use "_mixins";
 @use "../components/price";
+@use "../components/appointment";
 
 .wallpaper:after {
 	width: 100%;

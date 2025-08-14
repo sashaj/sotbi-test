@@ -38,6 +38,12 @@ export class InputMask {
 			})
 		}
 
+		for (const $el of document.querySelectorAll('input[name="name"]')) {
+			IMask($el, {
+				mask: /^[A-Za-zА-Яа-яЁё\s]+$/,
+			});
+		}
+
 		for (const $el of document.querySelectorAll('input[data-mask-date]')) {
 			const mask = IMask($el, {
 				mask: Date,
@@ -75,4 +81,5 @@ export class InputMask {
 			})
 		}
 	}
+
 }

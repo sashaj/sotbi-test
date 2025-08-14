@@ -1,75 +1,59 @@
-import validate from 'validate.js'
+import validate from 'validate.js';
 
-const isEmpty = obj => obj && Object.keys(obj).length === 0 && obj.constructor === Object
+export class FormValidator {
+	constructor(formSelector) {
+		this.form = document.querySelector(formSelector);
+		if (!this.form) return;
 
-const defaultSchema = {
-	email: {
-		email: true,
-	},
-	phone: {
-		length: {
-			is: 18,
-		},
-	},
-}
+		this.nameInput = this.form.querySelector('input[name="name"]');
+		this.phoneInput = this.form.querySelector('input[name="phone"]');
+		this.checkbox = this.form.querySelector('input[name="policy"]');
+		this.submitBtn = this.form.querySelector('button[type="submit"]');
 
-export class Validation {
-	constructor(selector = 'form', schema = {}, options = {}) {
-		if (typeof selector !== 'string') {
-			console.error('[Validation] Selector must be string')
-			return
-		}
-
-		this.$form = document.querySelector(selector)
-
-		if (!this.$form) {
-			console.error('[Validation] Form not found')
-			return
-		}
-
-		this.options = {
-			selectors: 'input, select, textarea',
-			events: 'change, input, blur',
-			classNames: {
-				root: 'field',
-				error: 'field_error',
-				success: 'field_success',
+		this.constraints = {
+			name: {
+				presence: { allowEmpty: false }
 			},
-		}
+			phone: {
+				presence: true,
+				length: {
+					is: 11,
 
-		if (typeof options === 'object') {
-			this.options = { ...this.options, ...options }
-		}
-
-		this.schema = !isEmpty(schema) ? schema : defaultSchema
-
-		this.#addListeners()
-	}
-
-	#addListeners() {
-		for (const $field of this.$form.querySelectorAll(this.options.selectors)) {
-			const events = this.options.events.split(',')
-
-			for (const event of events) {
-				$field.addEventListener(event, this.validate($field).bind(this))
+				}
+			},
+			policy: {
+				inclusion: {
+					within: [true],
+				}
 			}
-		}
+		};
+
+		this.#init();
 	}
 
-	validate($el) {
-		if (!this.schema[$el.name]) return
+	#init() {
+		this.submitBtn.disabled = true;
 
-		const values = validate.collectFormValues(this.$form)
-		const errors = validate.single(values[$el.name], this.schema[$el.name])
+		[this.nameInput, this.phoneInput, this.checkbox].forEach(el => {
+			el.addEventListener('input', () => this.#validateForm());
+			el.addEventListener('change', () => this.#validateForm());
+		});
+	}
 
-		const $field = $el.closest(`.${this.options.classNames.root}`)
+	#validateForm() {
 
-		if (errors) {
-			$field.classList.add(this.options.classNames.error)
-			$field.classList.remove(this.options.classNames.success)
-		} else {
-			$field.classList.remove(this.options.classNames.error)
-			$field.classList.add(this.options.classNames.success)
-		}
+		const formValues = {
+			name: this.nameInput.value.trim(),
+			phone: this.phoneInput.value.replace(/\D/g, ''),
+			policy: this.checkbox.checked
+		};
+
+		const errors = validate(formValues, this.constraints) || {};
+
+		this.nameInput.classList.toggle('error', !!errors.name);
+		this.phoneInput.classList.toggle('error', !!errors.phone);
+
+
+		this.submitBtn.disabled = Object.keys(errors).length > 0;
 	}
 }

@@ -1,0 +1,138 @@
+.appointment {
+	background-color: rgba(255, 255, 255, 0.2);
+	margin-top: 6rem;
+	border-image-source: linear-gradient(
+		90deg,
+		rgba(255, 255, 255, 0.3) 0%,
+		#ffffff 47.6%,
+		rgba(255, 255, 255, 0.3) 100%
+	);
+	border-radius: 30px;
+	padding: 3rem;
+	border-width: 1px;
+	border-image-source: linear-gradient(
+		90deg,
+		rgba(255, 255, 255, 0.3) 0%,
+		#ffffff 47.6%,
+		rgba(255, 255, 255, 0.3) 100%
+	);
+	border-image-slice: 1;
+	&__head {
+		display: flex;
+		justify-content: space-between;
+		align-items: center;
+		margin-bottom: 3rem;
+		.icon {
+			margin-right: 1rem;
+			fill: #ffffff80;
+		}
+	}
+	&__contact {
+		display: flex;
+	}
+	&__metro {
+		display: flex;
+		margin-right: 2rem;
+		align-items: center;
+	}
+	&__phone {
+		display: flex;
+		align-items: center;
+	}
+	&__header {
+		font-size: 4.8rem;
+		color: var(--color-white);
+		width: 46.2rem;
+	}
+
+	&__body {
+		display: grid;
+		grid-template-columns: repeat(5, 1fr);
+		//grid-template-rows: repeat(1, 1fr);
+		grid-column-gap: 2rem;
+		.icon {
+			fill: var(--color-blue);
+			position: absolute;
+			left: 2rem;
+			width: 20px;
+			height: 20px;
+			top: 1.2rem;
+		}
+	}
+
+	&__field {
+		position: relative;
+	}
+
+	&__input {
+		border-radius: 3rem;
+		height: 4.4rem;
+		color: var(--color-blue);
+		padding: 1.2rem 2rem;
+		padding-left: 5rem;
+		height: 4.4rem;
+		width: 100%;
+		border: 0px;
+	}
+
+	.icon_phone {
+		width: 20px;
+		height: 20px;
+	}
+	.icon_metro {
+		width: 25px;
+		height: 20px;
+	}
+	.icon_settings,
+	.icon_geo {
+		z-index: 10;
+	}
+
+	&-metro__name,
+	&-phone__link {
+		color: var(--color-white);
+		font-weight: 500;
+	}
+	&-metro__name {
+		font-size: 16px;
+	}
+	&-phone__link {
+		font-size: 20px;
+	}
+	&-phone__link + &-phone__link {
+		margin-left: 0.5rem;
+	}
+	&__submit {
+		width: 100%;
+		border-radius: 3rem;
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		background-color: #997b67;
+		height: 100%;
+		border: 0;
+		color: var(--color-white);
+		font-size: 1.6rem;
+		font-weight: 500;
+	}
+	&__submit:disabled {
+		opacity: 0.5;
+	}
+	&__policy span {
+		margin-left: 1.8rem;
+		font-size: 14px;
+		color: #ffffff80;
+	}
+	&__footer {
+		margin-top: 2rem;
+		display: flex;
+		justify-content: center;
+	}
+	.select__placeholder,
+	.select__value,
+	.select__option {
+		font-size: 1.6rem;
+		color: var(--color-blue);
+		opacity: 1;
+	}
+}
